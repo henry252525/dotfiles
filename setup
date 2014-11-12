@@ -1,0 +1,27 @@
+#! /bin/bash
+
+set -e
+
+# Checks for files that will be changed
+changed_files=(.tmux.conf)
+
+changed_file_exists=false
+
+for file in "${changed_files[@]}"; do
+  if [ -e "$HOME/$file" ]; then
+    echo "$file exists!"
+    changed_file_exists=true
+  fi
+done
+
+if [ "$changed_file_exists" = true ]; then
+  echo "Are you sure you want to overwrite these files? (y/n)"
+  read resp
+  if [ "$resp" != y ]; then
+    exit 0
+  fi
+fi
+
+# create symlinks
+echo "$HOME/.tmux.conf"
+ln -sf "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
