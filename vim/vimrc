@@ -1,6 +1,6 @@
 set encoding=utf-8
 
-" Vundle
+" **** Vundle ****
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -10,5 +10,6 @@ Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
+" ***************
 
 colorscheme jellybeans
