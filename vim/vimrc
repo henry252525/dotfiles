@@ -94,3 +94,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " find git merge conflict markers
 nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" don't beep, use visualbell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
