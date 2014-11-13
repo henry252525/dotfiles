@@ -23,12 +23,15 @@ Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'itchyny/lightline.vim'
 set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
-nnoremap <Leader>G :Goyo<CR>
+nnoremap <Leader>z :Goyo<CR>
 
 Plugin 'scrooloose/nerdtree'
 map <leader>e :NERDTreeToggle<CR>
