@@ -13,3 +13,9 @@ if has("gui_macvim")
   set fuoptions=maxhorz,maxvert
 end
 
+
+" hybrid number mode (vim 7.4+ only)
+" Only enable in gvim since updating the screen
+" is slow in the terminal
+set relativenumber
+set number

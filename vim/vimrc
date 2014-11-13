@@ -74,11 +74,6 @@ set smartcase                     " ... unless they contain at least one capital
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 
-" hybrid number mode (vim 7.4+ only)
-" http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/
-set relativenumber
-set number
-
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
 set hidden
