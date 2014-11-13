@@ -75,8 +75,6 @@ set listchars+=precedes:<         " The character to show in the first column wh
 
 set smartindent
 
-set cc=80
-
 function s:setupWrapping()
   set wrap
   set wrapmargin=2
@@ -151,7 +149,7 @@ map <leader>n :bn<cr>
 map <leader>p :bp<cr>
 map <leader>d :bd<cr>
 
-
+set cc=80
 " Toggle cc
 function! g:ToggleColorColumn()
   if &colorcolumn != ''
@@ -161,4 +159,6 @@ function! g:ToggleColorColumn()
   endif
 endfunction
 nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
+" Turn off cc by default
+call g:ToggleColorColumn()
 
