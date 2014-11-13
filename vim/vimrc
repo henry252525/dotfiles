@@ -13,7 +13,7 @@ nmap <leader>a :Ag
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '' " don't use default binding
 nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>p :CtrlP<CR>
+nmap <leader>f :CtrlP<CR>
 nmap <leader>t :CtrlPBufTag<CR>
 nmap <leader>l :CtrlPLine<CR>
 let g:limelight_conceal_ctermfg = 'gray'
@@ -28,7 +28,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
-nnoremap <Leader>f :Goyo<CR>
+nnoremap <Leader>G :Goyo<CR>
 
 Plugin 'scrooloose/nerdtree'
 map <leader>e :NERDTreeToggle<CR>
@@ -40,6 +40,9 @@ Plugin 'airblade/vim-gitgutter'
 Bundle 'sickill/vim-pasta'
 
 Plugin 'tpope/vim-commentary'
+
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
 
 Plugin 'nathanaelkane/vim-indent-guides'
 
