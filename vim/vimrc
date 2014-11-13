@@ -7,6 +7,7 @@ set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
@@ -100,3 +101,12 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
+
+
+"" Airline/Status abr
+" always show the status bar
+set laststatus=2
+set noshowmode
+" Disable > separators.
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
