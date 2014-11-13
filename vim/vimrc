@@ -9,6 +9,7 @@ call vundle#begin()
 
 
 Plugin 'kien/ctrlp.vim'
+let g:ctrlp_map = '' " don't use default binding
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>p :CtrlP<CR>
 nmap <leader>t :CtrlPBufTag<CR>
@@ -138,3 +139,15 @@ map <C-l> <C-W>l<C-W>_
 map <leader>n :bn<cr>
 map <leader>p :bp<cr>
 map <leader>d :bd<cr>
+
+
+" Toggle cc
+function! g:ToggleColorColumn()
+  if &colorcolumn != ''
+    setlocal colorcolumn&
+  else
+    setlocal colorcolumn=+1
+  endif
+endfunction
+nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
+
