@@ -7,6 +7,8 @@ filetype off
 set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'rking/ag.vim'
+nmap <leader>a :Ag 
 
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '' " don't use default binding
