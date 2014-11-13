@@ -16,12 +16,21 @@ nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>p :CtrlP<CR>
 nmap <leader>t :CtrlPBufTag<CR>
 nmap <leader>l :CtrlPLine<CR>
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
 
 
 Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'itchyny/lightline.vim'
 set laststatus=2
+
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+nnoremap <Leader>f :Goyo<CR>
 
 Plugin 'scrooloose/nerdtree'
 map <leader>e :NERDTreeToggle<CR>
