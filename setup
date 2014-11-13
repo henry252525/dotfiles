@@ -6,8 +6,8 @@ set -e
 git submodule init
 git submodule update
 
-# Checks for files that will be changed
-changed_files=(.tmux.conf)
+# Checks for files that will be changed in ~
+changed_files=(.tmux.conf .vimrc .gvimrc)
 
 changed_file_exists=false
 
@@ -27,5 +27,9 @@ if [ "$changed_file_exists" = true ]; then
 fi
 
 # create symlinks
-echo "$HOME/.tmux.conf"
 ln -sf "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$(pwd)/vim/vimrc" "$HOME/.vimrc"
+ln -sf "$(pwd)/vim/gvimrc" "$HOME/.gvimrc"
+
+# install Vundle plugins
+vim +PluginInstall +qall
