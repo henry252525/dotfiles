@@ -35,6 +35,8 @@ set listchars+=precedes:<         " The character to show in the first column wh
 
 set smartindent
 
+set cc=80
+
 function s:setupWrapping()
   set wrap
   set wrapmargin=2
