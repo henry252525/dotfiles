@@ -27,7 +27,7 @@ if [ "$changed_file_exists" = true ]; then
 fi
 
 # create symlinks
-ln -sf "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$(pwd)/vim/vimrc" "$HOME/.vimrc"
 ln -sf "$(pwd)/vim/gvimrc" "$HOME/.gvimrc"
 
