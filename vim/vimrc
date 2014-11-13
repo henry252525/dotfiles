@@ -19,8 +19,6 @@ nmap <leader>l :CtrlPLine<CR>
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
-
-
 Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'itchyny/lightline.vim'
@@ -46,6 +44,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'tpope/vim-surround'
+
+Plugin 'tpope/vim-repeat'
 
 
 call vundle#end()
