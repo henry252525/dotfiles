@@ -25,9 +25,13 @@ map <leader>e :NERDTreeToggle<CR>
 
 Plugin 'scrooloose/syntastic'
 
+Plugin 'airblade/vim-gitgutter'
+
 Bundle 'sickill/vim-pasta'
 
 Plugin 'tpope/vim-commentary'
+
+Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'tpope/vim-surround'
 
@@ -130,4 +134,7 @@ map <C-k> <C-W>k<C-W>_
 map <C-h> <C-W>h<C-W>_
 map <C-l> <C-W>l<C-W>_
 
-
+" Easier buffer naviation
+map <leader>n :bn<cr>
+map <leader>p :bp<cr>
+map <leader>d :bd<cr>
