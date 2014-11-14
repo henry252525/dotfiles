@@ -21,11 +21,13 @@ let g:limelight_conceal_ctermfg = 240
 
 Plugin 'nanotech/jellybeans.vim'
 
-Plugin 'itchyny/lightline.vim'
+Plugin 'bling/vim-airline'
 set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ }
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#whitespace#enabled = 0
+
 
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
@@ -154,6 +156,7 @@ map <C-l> <C-W>l<C-W>_
 map <leader>n :bn<cr>
 map <leader>p :bp<cr>
 map <leader>d :bd<cr>
+map <leader><leader> <C-^>
 
 set cc=80
 " Toggle cc
@@ -168,3 +171,5 @@ nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
 " Turn off cc by default
 call g:ToggleColorColumn()
 
+" turn off the startup message
+set shortmess=at
