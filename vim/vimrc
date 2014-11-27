@@ -19,7 +19,6 @@ nmap <leader>l :CtrlPLine<CR>
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
-Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'bling/vim-airline'
 set laststatus=2
@@ -27,6 +26,16 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#whitespace#enabled = 0
+
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+  let a:palette.normal['airline_c'] = [ '#444444', '#1c1c1c', 237, 234 ]
+  let a:palette.insert['airline_c'] = [ '#444444', '#1c1c1c', 237, 234 ]
+  let a:palette.visual['airline_c'] = [ '#444444', '#1c1c1c', 237, 234 ]
+endfunction
+
+Plugin 'nanotech/jellybeans.vim'
+
 
 
 Plugin 'junegunn/goyo.vim'
@@ -62,10 +71,13 @@ let g:clang_user_options='|| exit 0'
 call vundle#end()
 filetype plugin indent on
 " ***********************
+colorscheme jellybeans
+" Make SignColumn same as background color
+highlight clear SignColumn
+highlight LineNr guibg='#1c1c1c'
 
 syntax on
 
-colorscheme jellybeans
 
 " whitespace
 set nowrap                        " don't wrap lines
