@@ -19,6 +19,7 @@ nmap <leader>l :CtrlPLine<CR>
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
+Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'bling/vim-airline'
 set laststatus=2
@@ -33,10 +34,6 @@ function! AirlineThemePatch(palette)
   let a:palette.insert['airline_c'] = [ '#444444', '#1c1c1c', 237, 234 ]
   let a:palette.visual['airline_c'] = [ '#444444', '#1c1c1c', 237, 234 ]
 endfunction
-
-Plugin 'nanotech/jellybeans.vim'
-
-
 
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
@@ -71,12 +68,14 @@ let g:clang_user_options='|| exit 0'
 call vundle#end()
 filetype plugin indent on
 " ***********************
-colorscheme jellybeans
-" Make SignColumn same as background color
-highlight clear SignColumn
-highlight LineNr guibg='#1c1c1c'
 
 syntax on
+colorscheme jellybeans
+" Make SignColumn same as background color
+highlight LineNr guibg='#1c1c1c'
+highlight CursorLineNr guibg='#1c1c1c'
+highlight clear SignColumn
+
 
 
 " whitespace
@@ -187,4 +186,4 @@ nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
 call g:ToggleColorColumn()
 
 " turn off the startup message
-set shortmess=at
+set shortmess=atI
