@@ -34,6 +34,7 @@ Plugin 'junegunn/limelight.vim'
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
 nnoremap <Leader>z :Goyo<CR>
+nnoremap <Leader>x :Limelight!!<CR>
 
 Plugin 'scrooloose/nerdtree'
 map <leader>e :NERDTreeToggle<CR>
