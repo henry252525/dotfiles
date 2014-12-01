@@ -62,8 +62,10 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'tpope/vim-repeat'
 
-Plugin 'Valloric/YouCompleteMe'
-let g:clang_user_options='|| exit 0'
+if has("gui_running")
+  Plugin 'Valloric/YouCompleteMe'
+  let g:clang_user_options='|| exit 0'
+endif
 
 call vundle#end()
 filetype plugin indent on
