@@ -62,6 +62,11 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'tpope/vim-repeat'
 
+Bundle 'christoomey/vim-tmux-navigator'
+
+Plugin 'edkolev/tmuxline.vim'
+let g:tmuxline_powerline_separators = 0
+
 if has("gui_running")
   Plugin 'Valloric/YouCompleteMe'
   let g:clang_user_options='|| exit 0'
@@ -76,6 +81,10 @@ colorscheme jellybeans
 " Make SignColumn same as background color
 highlight LineNr guibg='#1c1c1c'
 highlight CursorLineNr guibg='#1c1c1c'
+
+highlight GitGutterChangeDefault ctermbg=233 guibg=#1c1c1c
+highlight GitGutterAddDefault ctermbg=233 guibg=#1c1c1c
+highlight GitGutterDeleteDefault ctermbg=233 guibg=#1c1c1c
 highlight clear SignColumn
 
 
@@ -162,11 +171,11 @@ if has('autocmd')
 endif
 
 
-" Tilted window navigation
-map <C-J> <C-W>j<C-W>_
-map <C-k> <C-W>k<C-W>_
-map <C-h> <C-W>h<C-W>_
-map <C-l> <C-W>l<C-W>_
+" " Tilted window navigation
+" map <C-J> <C-W>j<C-W>_
+" map <C-k> <C-W>k<C-W>_
+" map <C-h> <C-W>h<C-W>_
+" map <C-l> <C-W>l<C-W>_
 
 " Easier buffer naviation
 map <leader>n :bn<cr>
@@ -189,3 +198,11 @@ call g:ToggleColorColumn()
 
 " turn off the startup message
 set shortmess=atI
+
+
+" resize splits when vim window is resized
+if has('autocmd')
+  autocmd VimResized * exe "normal \<c-w>="
+endif
+
+map <C-W>m <C-W>_<C-W>\|
