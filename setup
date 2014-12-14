@@ -3,6 +3,10 @@
 set -e
 
 # TODO: Install homebrew
+# TODO: Install MacVim/vim with lua support
+# TODO: Install Ctags
+# TODO: Install tmux
+# TODO: Install reattach-to-user-namespace
 
 # Set up submodules
 git submodule init
@@ -37,6 +41,8 @@ ln -sf "$(pwd)/ctags/ctags" "$HOME/.ctags"
 # install Vundle plugins
 vim +PluginInstall +qall
 
+
+# TODO: Replace YouCompleteMe with neocomplete
 # Compile YouCompleteMe
-cd "$HOME/.vim/bundle/YouCompleteMe"
-./install.sh --clang-completer
+# cd "$HOME/.vim/bundle/YouCompleteMe"
+# ./install.sh --clang-completer

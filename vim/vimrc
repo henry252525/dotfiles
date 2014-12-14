@@ -67,10 +67,10 @@ Bundle 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
 
-if has("gui_running")
-  Plugin 'Valloric/YouCompleteMe'
-  let g:clang_user_options='|| exit 0'
-endif
+" if has("gui_running")
+"   Plugin 'Valloric/YouCompleteMe'
+"   let g:clang_user_options='|| exit 0'
+" endif
 
 call vundle#end()
 filetype plugin indent on
