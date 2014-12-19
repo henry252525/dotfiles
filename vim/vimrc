@@ -82,6 +82,9 @@ colorscheme jellybeans
 highlight LineNr guibg='#1c1c1c'
 highlight CursorLineNr guibg='#1c1c1c'
 
+" highlight LineNr ctermbg=234 guibg='#1c1c1c'
+" highlight CursorLineNr ctermbg=234 guibg='#1c1c1c'
+
 highlight GitGutterChangeDefault ctermbg=233 guibg=#1c1c1c
 highlight GitGutterAddDefault ctermbg=233 guibg=#1c1c1c
 highlight GitGutterDeleteDefault ctermbg=233 guibg=#1c1c1c
@@ -106,13 +109,15 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the first column when wrap is
                                   " off and the line continues beyond the left of the screen
 
-set smartindent
-
 function s:setupWrapping()
   set wrap
   set wrapmargin=2
   set textwidth=80
 endfunction
+
+
+filetype indent on
+set nosmartindent
 
 
 "" Commands for specific file types
@@ -127,7 +132,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.json set ft=javascript
 
   " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-  au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+  " au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump

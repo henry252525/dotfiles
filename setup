@@ -9,7 +9,7 @@ git submodule init
 git submodule update
 
 # Checks for files that will be changed in ~
-changed_files=(.tmux.conf .vimrc .gvimrc .ctags)
+changed_files=(.tmux.conf .vimrc .gvimrc .ctags .slate.js)
 
 changed_file_exists=false
 
@@ -33,6 +33,7 @@ ln -sf "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$(pwd)/vim/vimrc" "$HOME/.vimrc"
 ln -sf "$(pwd)/vim/gvimrc" "$HOME/.gvimrc"
 ln -sf "$(pwd)/ctags/ctags" "$HOME/.ctags"
+ln -sf "$(pwd)/slate/slate.js" "$HOME/.slate.js"
 
 # install Vundle plugins
 vim +PluginInstall +qall
