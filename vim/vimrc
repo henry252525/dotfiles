@@ -65,6 +65,8 @@ Plugin 'tpope/vim-repeat'
 Bundle 'christoomey/vim-tmux-navigator'
 
 Plugin 'edkolev/tmuxline.vim'
+
+Plugin 'wting/rust.vim'
 let g:tmuxline_powerline_separators = 0
 
 Plugin 'jimenezrick/vimerl'
