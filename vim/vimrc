@@ -15,7 +15,7 @@ let g:ctrlp_map = '' " don't use default binding
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>f :CtrlP<CR>
 nmap <leader>t :CtrlPBufTag<CR>
-nmap <leader>l :CtrlPLine<CR>
+" nmap <leader>l :CtrlPLine<CR>
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
@@ -54,7 +54,7 @@ Bundle 'sickill/vim-pasta'
 Plugin 'tpope/vim-commentary'
 
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
+" Bundle 'xolox/vim-easytags'
 
 Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -66,6 +66,8 @@ Bundle 'christoomey/vim-tmux-navigator'
 
 Plugin 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
+
+Plugin 'jimenezrick/vimerl'
 
 " if has("gui_running")
 "   Plugin 'Valloric/YouCompleteMe'
@@ -133,6 +135,9 @@ if has("autocmd")
 
   " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   " au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+  "
+  au FileType erlang set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
 
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
