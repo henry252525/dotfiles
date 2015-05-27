@@ -7,13 +7,14 @@ set -e
 # TODO: Install Ctags
 # TODO: Install tmux
 # TODO: Install reattach-to-user-namespace
+# TODO: Don't hardcode to ~/dotfiles
 
 # Set up submodules
 git submodule init
 git submodule update
 
 # Checks for files that will be changed in ~
-changed_files=(.tmux.conf .vimrc .gvimrc .ctags .slate.js)
+changed_files=(.tmux.conf .vimrc .gvimrc .ctags .slate.js .gitignore_global .gitconfig)
 
 changed_file_exists=false
 
@@ -32,12 +33,19 @@ if [ "$changed_file_exists" = true ]; then
   fi
 fi
 
+# Install Vundle
+set +e
+git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim &> /dev/null
+set -e
+
 # create symlinks
 ln -sf "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$(pwd)/vim/vimrc" "$HOME/.vimrc"
 ln -sf "$(pwd)/vim/gvimrc" "$HOME/.gvimrc"
 ln -sf "$(pwd)/ctags/ctags" "$HOME/.ctags"
 ln -sf "$(pwd)/slate/slate.js" "$HOME/.slate.js"
+ln -sf "$(pwd)/git/gitignore_global" "$HOME/.gitignore_global"
+ln -sf "$(pwd)/git/gitconfig" "$HOME/.gitconfig"
 
 # install Vundle plugins
 vim +PluginInstall +qall

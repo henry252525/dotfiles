@@ -1,0 +1,5 @@
+[user]
+	name = Elijah Andrews
+	email = elijahcandrews@gmail.com
+[core]
+	editor = /usr/bin/vim
