@@ -45,7 +45,7 @@ nnoremap <Leader>x :Limelight!!<CR>
 Plugin 'scrooloose/nerdtree'
 map <leader>e :NERDTreeToggle<CR>
 
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 Plugin 'airblade/vim-gitgutter'
 
@@ -76,6 +76,10 @@ Plugin 'jimenezrick/vimerl'
 "   let g:clang_user_options='|| exit 0'
 " endif
 
+Bundle 'solarnz/thrift.vim'
+
+Bundle "motus/pig.vim"
+
 call vundle#end()
 filetype plugin indent on
 " ***********************
@@ -98,8 +102,8 @@ highlight clear SignColumn
 
 " whitespace
 set nowrap                        " don't wrap lines
-set tabstop=2                     " a tab is two spaces
-set shiftwidth=2                  " an autoindent (with <<) is two spaces
+set tabstop=4                     " a tab is two spaces
+set shiftwidth=4                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
