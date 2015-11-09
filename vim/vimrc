@@ -64,10 +64,7 @@ Plugin 'tpope/vim-repeat'
 
 Bundle 'christoomey/vim-tmux-navigator'
 
-Plugin 'edkolev/tmuxline.vim'
-
 Plugin 'wting/rust.vim'
-let g:tmuxline_powerline_separators = 0
 
 Plugin 'jimenezrick/vimerl'
 
@@ -79,6 +76,9 @@ Plugin 'jimenezrick/vimerl'
 Bundle 'solarnz/thrift.vim'
 
 Bundle "motus/pig.vim"
+
+
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -102,8 +102,8 @@ highlight clear SignColumn
 
 " whitespace
 set nowrap                        " don't wrap lines
-set tabstop=4                     " a tab is two spaces
-set shiftwidth=4                  " an autoindent (with <<) is two spaces
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
@@ -139,9 +139,7 @@ if has("autocmd")
   " Treat JSON files like JavaScript
   au BufNewFile,BufRead *.json set ft=javascript
 
-  " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-  " au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-  "
+  au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
   au FileType erlang set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 
