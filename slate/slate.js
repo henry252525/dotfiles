@@ -40,21 +40,21 @@ var leftTwoThird = S.operation('move', {
 var rightThird = S.operation('move', {
   'x'     : 'screenOriginX+screenSizeX/1.5',
   'y'     : 'screenOriginY',
-  'width' : 'screenSizeX/3',
+  'width' : 'ceiling(screenSizeX/3)',
   'height': 'screenSizeY'
 });
 
 var rightHalf = S.operation('move', {
   'x'     : 'screenOriginX+screenSizeX/2',
   'y'     : 'screenOriginY',
-  'width' : 'screenSizeX/2',
+  'width' : 'ceiling(screenSizeX/2)',
   'height': 'screenSizeY'
 });
 
 var rightTwoThird = S.operation('move', {
   'x'     : 'screenOriginX+screenSizeX/3',
   'y'     : 'screenOriginY',
-  'width' : 'screenSizeX/1.5',
+  'width' : 'ceiling(screenSizeX/1.5)',
   'height': 'screenSizeY'
 });
 
