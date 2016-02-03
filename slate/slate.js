@@ -14,6 +14,13 @@ var fullscreen = S.operation('move', {
   'height': 'screenSizeY'
 });
 
+var center = S.operation('move', {
+  'x'     : 'screenOriginX+screenSizeX/8',
+  'y'     : 'screenOriginY+screenSizeY/8',
+  'width' : '0.75*screenSizeX',
+  'height': '0.75*screenSizeY'
+});
+
 // LEFT OPERATORS
 var leftThird = S.operation('move', {
   'x'     : 'screenOriginX',
@@ -70,6 +77,12 @@ var windowHint = S.operation('hint', {
 // BINDINGS
 // ============================================================================
 S.bindAll({
+  // Mine
+  'up:ctrl;cmd' : fullscreen,
+  'down:ctrl;cmd' : center,
+  'right:ctrl;cmd' : rightHalf,
+  'left:ctrl;cmd' : leftHalf,
+  // Elijah's
   'f:cmd;shift' : fullscreen,
   'h:ctrl;shift': leftThird,
   'h:alt;shift' : leftHalf,
