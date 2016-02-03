@@ -21,6 +21,21 @@ var center = S.operation('move', {
   'height': '0.75*screenSizeY'
 });
 
+// VERTICAL OPERATORS
+var topHalf = S.operation('move', {
+  'x'     : 'screenOriginX',
+  'y'     : 'screenOriginY',
+  'width' : 'screenSizeX',
+  'height': 'screenSizeY/2'
+});
+
+var bottomHalf = S.operation('move', {
+  'x'     : 'screenOriginX',
+  'y'     : 'screenOriginY+screenSizeY/2',
+  'width' : 'screenSizeX',
+  'height': 'ceiling(screenSizeY/2)'
+});
+
 // LEFT OPERATORS
 var leftThird = S.operation('move', {
   'x'     : 'screenOriginX',
@@ -78,10 +93,12 @@ var windowHint = S.operation('hint', {
 // ============================================================================
 S.bindAll({
   // Mine
-  'up:ctrl;cmd' : fullscreen,
-  'down:ctrl;cmd' : center,
-  'right:ctrl;cmd' : rightHalf,
-  'left:ctrl;cmd' : leftHalf,
+  'up:ctrl;cmd'        : fullscreen,
+  'down:ctrl;cmd'      : center,
+  'up:ctrl;cmd;shift'  : topHalf,
+  'down:ctrl;cmd;shift': bottomHalf,
+  'right:ctrl;cmd'     : rightHalf,
+  'left:ctrl;cmd'      : leftHalf,
   // Elijah's
   'f:cmd;shift' : fullscreen,
   'h:ctrl;shift': leftThird,
